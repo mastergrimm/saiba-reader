@@ -11,6 +11,7 @@ export const preview: Manga = {
 		{
 			id: 1,
 			title: "The Beginning",
+			date: "2021-01-01",
 			pages: [
 				{ id: 1, image: "1.jpeg" },
 				{ id: 2, image: "2.jpeg" },
@@ -24,14 +25,12 @@ export const preview: Manga = {
 				{ id: 10, image: "10.jpeg" },
 				{ id: 11, image: "11.jpeg" },
 				{ id: 12, image: "12.jpeg" },
-				{ id: 13, image: "13.jpeg" },
-				{ id: 14, image: "14.jpeg" },
-				{ id: 15, image: "15.jpeg" },
 			],
 		},
 		{
 			id: 2,
 			title: "The Journey",
+			date: "2021-01-02",
 			pages: [
 				{ id: 1, image: "1.jpeg" },
 				{ id: 2, image: "2.jpeg" },
@@ -45,14 +44,12 @@ export const preview: Manga = {
 				{ id: 10, image: "10.jpeg" },
 				{ id: 11, image: "11.jpeg" },
 				{ id: 12, image: "12.jpeg" },
-				{ id: 13, image: "13.jpeg" },
-				{ id: 14, image: "14.jpeg" },
-				{ id: 15, image: "15.jpeg" },
 			],
 		},
 		{
 			id: 3,
 			title: "The Fall",
+			date: "2021-01-03",
 			pages: [
 				{ id: 1, image: "1.jpeg" },
 				{ id: 2, image: "2.jpeg" },
@@ -66,14 +63,12 @@ export const preview: Manga = {
 				{ id: 10, image: "10.jpeg" },
 				{ id: 11, image: "11.jpeg" },
 				{ id: 12, image: "12.jpeg" },
-				{ id: 13, image: "13.jpeg" },
-				{ id: 14, image: "14.jpeg" },
-				{ id: 15, image: "15.jpeg" },
 			],
 		},
 		{
 			id: 4,
 			title: "The Ending",
+			date: "2021-01-04",
 			pages: [
 				{ id: 1, image: "1.jpeg" },
 				{ id: 2, image: "2.jpeg" },
@@ -87,9 +82,6 @@ export const preview: Manga = {
 				{ id: 10, image: "10.jpeg" },
 				{ id: 11, image: "11.jpeg" },
 				{ id: 12, image: "12.jpeg" },
-				{ id: 13, image: "13.jpeg" },
-				{ id: 14, image: "14.jpeg" },
-				{ id: 15, image: "15.jpeg" },
 			],
 		},
 	],
