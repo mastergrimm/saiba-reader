@@ -2,11 +2,29 @@
 	import { mangaList } from "$lib/data/mangaList";
 	import type Manga from "$lib/types/manga";
 	import { truncateText } from "$lib/utils/truncateText";
+	import { search } from "$lib/store";
+	import Search from "$lib/components/Search.svelte";
 
 	let mangaData: Manga[] = mangaList;
+
+	function highlightSearchWord(text: string) {
+		return text.replace(
+			new RegExp($search, "gi"),
+			(match) => `<span class="highlight">${match}</span>`
+		);
+	}
+
+	$: {
+		mangaData = mangaList.filter(
+			(manga) =>
+				manga.title.toLowerCase().includes($search.toLowerCase()) ||
+				manga.author.toLowerCase().includes($search.toLowerCase())
+		);
+	}
 </script>
 
-<div class="page">
+<div class="home">
+	<Search />
 	<div class="manga__list">
 		{#each mangaData as manga}
 			<a href={`/${manga.id}`} class="manga__item">
@@ -17,8 +35,16 @@
 					/>
 				</div>
 				<div class="manga__info">
-					<h2>{truncateText(manga.title, 22)}</h2>
-					<p>{truncateText(manga.author, 28)}</p>
+					<h2>
+						{@html highlightSearchWord(
+							truncateText(manga.title, 22)
+						)}
+					</h2>
+					<p>
+						{@html highlightSearchWord(
+							truncateText(manga.author, 28)
+						)}
+					</p>
 				</div>
 			</a>
 		{/each}
@@ -26,6 +52,9 @@
 </div>
 
 <style lang="scss">
+	.home {
+		@include flexbox(column, normal, normal, 2rem);
+	}
 	.manga__list {
 		@include flexbox(row, normal, normal, 1em);
 
@@ -79,5 +108,9 @@
 				}
 			}
 		}
+	}
+
+	:global(.highlight) {
+		color: var(--clr-accent);
 	}
 </style>
