@@ -10,9 +10,8 @@
 	</div>
 	<div class="options">
 		<button class="settings">
-			<Icon icon="ri:settings-3-line" width="32" height="32" />
+			<Icon icon="material-symbols:settings" width="32" height="32" />
 		</button>
-		<button class="upload">Upload</button>
 	</div>
 </header>
 
@@ -30,12 +29,5 @@
 
 	.options {
 		@include flexbox(row, center, normal, 1rem);
-
-		.upload {
-			padding: var(--spacing-1);
-
-			background-color: var(--clr-accent);
-			color: var(--clr-bg);
-		}
 	}
 </style>

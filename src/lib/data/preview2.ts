@@ -3,7 +3,9 @@ import type Manga from "$lib/types/manga";
 export const preview2: Manga = {
 	id: 2,
 	title: "Dragon Warriors",
-	description: "Preview manga for testing purposes.",
+	slug: "dragon-warriors",
+	description:
+		"In the mystical realm of Eldoria, where dragons soar the skies and ancient magic courses through the land, a new generation of heroes rises to face an unprecedented threat. Dragon Warriors follows the epic journey of a diverse group of individuals who discover that they are the chosen ones destined to protect Eldoria from an impending darkness that threatens to engulf the entire world.",
 	cover: "cover.jpeg",
 	author: "Franck Huang",
 	genres: ["Shonen", "Action", "Adventure", "Comedy", "Fantasy", "Magic"],
@@ -13,7 +15,7 @@ export const preview2: Manga = {
 			title: "The Beginning",
 			date: "2021-01-01",
 			pages: [
-				{ id: 1, image: "1.jpeg" },
+				{ id: 1, image: "4.jpeg" },
 				{ id: 2, image: "2.jpeg" },
 				{ id: 3, image: "3.jpeg" },
 				{ id: 4, image: "4.jpeg" },
@@ -32,7 +34,7 @@ export const preview2: Manga = {
 			title: "The Journey",
 			date: "2021-01-02",
 			pages: [
-				{ id: 1, image: "1.jpeg" },
+				{ id: 1, image: "3.jpeg" },
 				{ id: 2, image: "2.jpeg" },
 				{ id: 3, image: "3.jpeg" },
 				{ id: 4, image: "4.jpeg" },
@@ -51,7 +53,7 @@ export const preview2: Manga = {
 			title: "The Fall",
 			date: "2021-01-03",
 			pages: [
-				{ id: 1, image: "1.jpeg" },
+				{ id: 1, image: "2.jpeg" },
 				{ id: 2, image: "2.jpeg" },
 				{ id: 3, image: "3.jpeg" },
 				{ id: 4, image: "4.jpeg" },

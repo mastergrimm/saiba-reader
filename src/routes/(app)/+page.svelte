@@ -27,7 +27,7 @@
 	<Search />
 	<div class="manga__list">
 		{#each mangaData as manga}
-			<a href={`/${manga.id}`} class="manga__item">
+			<a href={`/${manga.slug}`} class="manga__item">
 				<div class="manga__image">
 					<img
 						src={`./src/lib/assets/${manga.id}/${manga.cover}`}
@@ -60,8 +60,8 @@
 
 		.manga__item {
 			@include flexbox(column, normal, normal, 0);
-			width: 100%;
-			max-width: 240px;
+			flex-wrap: wrap;
+			width: 240px;
 
 			background-color: rgba($color: var(--clr-cards), $alpha: 0.6);
 			outline: 5px solid transparent;

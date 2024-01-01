@@ -2,8 +2,8 @@ import type { PageServerLoad } from "./$types";
 import { mangaList } from "$lib/data/mangaList";
 
 export const load: PageServerLoad = async ({ params }) => {
-	const mangaId = params.manga;
-	const mangaData = mangaList.find((manga) => manga.id === Number(mangaId));
+	const mangaSlug = params.manga;
+	const mangaData = mangaList.find((manga) => manga.slug === mangaSlug);
 	const chapterId = params.chapter;
 	const chapterData = mangaData?.chapters.find(
 		(chapter) => chapter.id === Number(chapterId)
