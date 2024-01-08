@@ -1,5 +1,9 @@
 <script lang="ts">
 	import Icon from "@iconify/svelte";
+
+	import Modal from "$lib/components/Modal.svelte";
+
+	let showSettings: boolean = false;
 </script>
 
 <header>
@@ -9,11 +13,17 @@
 		</h1>
 	</div>
 	<div class="options">
-		<button class="settings">
+		<button class="settings" on:click={() => (showSettings = true)}>
 			<Icon icon="material-symbols:settings" width="32" height="32" />
 		</button>
 	</div>
 </header>
+
+{#if showSettings}
+	<Modal bind:show={showSettings}>
+		<h1>Settings</h1>
+	</Modal>
+{/if}
 
 <style lang="scss">
 	header {
