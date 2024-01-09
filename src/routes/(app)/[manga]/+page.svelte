@@ -79,7 +79,7 @@
 	}
 
 	.chapter__list {
-		@include flexbox(column, normal, normal, 1em);
+		@include flexbox(column, normal, normal, 0em);
 
 		padding: var(--spacing-2) 0;
 
@@ -89,10 +89,6 @@
 
 			background-color: rgba($color: var(--clr-cards), $alpha: 0.4);
 			padding: var(--spacing-1);
-
-			&:hover {
-				background-color: rgba($color: var(--clr-cards), $alpha: 0.6);
-			}
 
 			.chapter__info {
 				@include flexbox(row, normal, normal, 0.5em);
@@ -111,6 +107,17 @@
 			.chapter__date {
 				font-weight: 300;
 			}
+		}
+
+		.chapter__item:nth-child(even) {
+			background-color: rgba($color: var(--clr-cards), $alpha: 0.5);
+		}
+
+		.chapter__item:hover {
+			background-color: rgba(
+				$color: var(--clr-accent-shade),
+				$alpha: 0.4
+			);
 		}
 	}
 </style>

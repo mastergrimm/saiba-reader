@@ -1,12 +1,19 @@
 <script lang="ts">
 	import type Manga from "$lib/types/manga.js";
 	import Icon from "@iconify/svelte";
+	import { goto } from "$app/navigation";
 
 	export let data;
 
 	let manga: Manga = data.mangaData!;
 	let chapter: Chapter = data.chapterData!;
 	let pages: Page[] = chapter.pages;
+
+	const changeChapter = (event: Event) => {
+		const selectedChapterId = (event.target as HTMLSelectElement).value;
+
+		goto(`/${manga.slug}/${selectedChapterId}`);
+	};
 
 	$: {
 		manga = data.mangaData!;
@@ -20,8 +27,19 @@
 		<div class="info">
 			<a href={`/${manga.slug}`} class="info__title">{manga?.title}</a>
 			<div class="info__chapter">
-				<span>Chapter {chapter.id}:</span>
-				{chapter.title}
+				<select
+					name="chapter"
+					id="chapter__select"
+					on:change={changeChapter}
+					bind:value={chapter.id}
+				>
+					{#each manga.chapters as chapter}
+						<option value={chapter.id}>
+							<span>{chapter.id}. </span>
+							{chapter.title}</option
+						>
+					{/each}
+				</select>
 			</div>
 		</div>
 		<div class="preview">
@@ -78,6 +96,10 @@
 	}
 
 	.info {
+		@include flexbox(row, flex-end, space-between, 1rem);
+
+		margin: 0 0 var(--spacing-1) 0;
+
 		.info__title {
 			font-size: var(--text-2xl);
 			font-weight: 700;
@@ -87,9 +109,21 @@
 			font-size: var(--text-lg);
 			font-weight: 400;
 
-			span {
-				color: var(--clr-accent);
-				font-weight: 700;
+			select {
+				padding: var(--spacing-quarter) var(--spacing-half);
+				font-size: var(--text-md);
+
+				background-color: rgba(var(--clr-cards), 0.6);
+
+				border-radius: var(--rounded-md);
+
+				span {
+					font-weight: 700;
+				}
+			}
+
+			option {
+				background-color: rgba(var(--clr-cards), 1);
 			}
 		}
 	}
@@ -103,10 +137,14 @@
 			@include flexbox(row, center, normal, 0.2rem);
 			padding: var(--spacing-quarter) var(--spacing-half);
 
-			background-color: rgba(var(--clr-cards), 0.6);
+			background-color: rgba(var(--clr-accent-shade), 0.4);
+
+			border-radius: var(--rounded-md);
+			font-size: var(--text-sm);
 
 			&:hover {
-				background-color: rgba(var(--clr-cards), 1);
+				background-color: rgba(var(--clr-accent-shade), 0.9);
+				color: var(--clr-bg);
 			}
 		}
 	}

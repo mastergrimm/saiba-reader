@@ -51,5 +51,6 @@
 
 		z-index: 300;
 		padding: var(--spacing-2);
+		border-radius: var(--rounded-md);
 	}
 </style>
