@@ -33,6 +33,10 @@
 		flex: 1;
 		border-radius: var(--rounded-md);
 
+		@include tablet {
+			width: 100%;
+		}
+
 		.search__input {
 			width: 100%;
 			background-color: transparent;

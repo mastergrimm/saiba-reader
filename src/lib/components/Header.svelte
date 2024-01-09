@@ -25,7 +25,11 @@
 	</div>
 	<div class="options">
 		<button class="settings" on:click={() => (showSettings = true)}>
-			<Icon icon="material-symbols:settings" width="32" height="32" />
+			<Icon
+				icon="material-symbols-light:settings"
+				width="32"
+				height="32"
+			/>
 		</button>
 	</div>
 </header>
@@ -107,16 +111,6 @@
 						/>
 						<label for="dark">Dark</label>
 					</div>
-					<div class="settings__option">
-						<input
-							type="radio"
-							name="theme"
-							id="system"
-							value="system"
-							bind:group={$theme}
-						/>
-						<label for="system">System</label>
-					</div>
 				</div>
 				<div class="settings__footer">
 					<button
@@ -146,6 +140,12 @@
 			img {
 				height: 64px;
 				margin-right: var(--spacing-quarter);
+			}
+
+			span {
+				@include tablet {
+					display: none;
+				}
 			}
 		}
 	}

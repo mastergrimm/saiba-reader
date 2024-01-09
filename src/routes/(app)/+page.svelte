@@ -57,6 +57,11 @@
 	}
 	.manga__list {
 		@include flexbox(row, normal, normal, 1em);
+		flex-wrap: wrap;
+
+		@include tablet {
+			@include flexbox(row, normal, center, 1em);
+		}
 
 		.manga__item {
 			@include flexbox(column, normal, normal, 0);
@@ -68,6 +73,10 @@
 
 			overflow: hidden;
 
+			@include tablet {
+				width: 240px;
+			}
+
 			&:hover {
 				background-color: rgba($color: var(--clr-cards), $alpha: 0.8);
 				outline: 5px solid var(--clr-accent);
@@ -76,6 +85,10 @@
 			.manga__image {
 				height: 340px;
 				overflow: hidden;
+
+				@include tablet {
+					height: 260px;
+				}
 
 				img {
 					width: 100%;

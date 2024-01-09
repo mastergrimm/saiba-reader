@@ -11,6 +11,21 @@
 			rel="stylesheet"
 		/>
 
+		<script>
+			switch (localStorage.getItem("theme")) {
+				case "dark":
+					document.documentElement.classList.add("dark");
+					document.documentElement.classList.remove("light");
+					break;
+				case "light":
+					document.documentElement.classList.remove("dark");
+					document.documentElement.classList.add("light");
+					break;
+				default:
+					break;
+			}
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

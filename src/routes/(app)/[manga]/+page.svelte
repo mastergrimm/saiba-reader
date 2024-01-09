@@ -31,7 +31,10 @@
 		{#each manga.chapters as chapter}
 			<a href={`/${manga.slug}/${chapter.id}`} class="chapter__item">
 				<div class="chapter__info">
-					<div class="chapter__id">Chapter {chapter.id}</div>
+					<div class="chapter__id">
+						<span>Chapter</span>
+						{chapter.id}
+					</div>
 					<div class="chapter__title">{chapter.title}</div>
 				</div>
 				<div class="chapter__date">{chapter.date}</div>
@@ -43,6 +46,10 @@
 <style lang="scss">
 	.manga__header {
 		@include flexbox(row, center, normal, 3em);
+
+		@include tablet {
+			@include flexbox(column, normal, normal, 2em);
+		}
 	}
 
 	.manga__cover {
@@ -96,6 +103,12 @@
 				.chapter__id {
 					font-weight: 800;
 					letter-spacing: 0.02em;
+
+					span {
+						@include tablet {
+							display: none;
+						}
+					}
 				}
 
 				.chapter__title {
@@ -106,6 +119,10 @@
 
 			.chapter__date {
 				font-weight: 300;
+
+				@include tablet {
+					font-size: var(--text-xs);
+				}
 			}
 		}
 

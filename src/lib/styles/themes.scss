@@ -12,3 +12,19 @@
 	--clr-bg-shade: 21, 21, 37;
 	--clr-accent-shade: 32, 236, 195;
 }
+
+.light:root {
+	--clr-text: #0d0d18;
+	--clr-bg: #f0f0f5;
+	--clr-bg-gradient: linear-gradient(
+		180deg,
+		rgba(245, 245, 255, 1) 0%,
+		rgba(230, 230, 250, 1) 100%
+	);
+	--clr-accent: #35ae65;
+	--clr-shadow: 100, 100, 110;
+	--clr-cards: 161, 185, 226;
+	--temp: #35ae65;
+	--clr-bg-shade: 245, 245, 255;
+	--clr-accent-shade: 53, 174, 101;
+}

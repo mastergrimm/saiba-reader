@@ -2,6 +2,7 @@
 	import type Manga from "$lib/types/manga.js";
 	import Icon from "@iconify/svelte";
 	import { goto } from "$app/navigation";
+	import LazyImage from "$lib/components/LazyImage.svelte";
 
 	export let data;
 
@@ -69,9 +70,8 @@
 			{#each pages as page}
 				<div class="preview__panel">
 					{#key page.id}
-						<img
+						<LazyImage
 							src={`./../src/lib/assets/${manga.id}/${page.image}`}
-							alt="Preview"
 						/>
 					{/key}
 				</div>
@@ -99,6 +99,11 @@
 		@include flexbox(row, flex-end, space-between, 1rem);
 
 		margin: 0 0 var(--spacing-1) 0;
+
+		@include tablet {
+			@include flexbox(column, center, normal, 1rem);
+			text-align: center;
+		}
 
 		.info__title {
 			font-size: var(--text-2xl);
