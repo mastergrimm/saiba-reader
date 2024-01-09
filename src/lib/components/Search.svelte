@@ -31,6 +31,7 @@
 		transition: all 0.2s ease;
 
 		flex: 1;
+		border-radius: var(--rounded-md);
 
 		.search__input {
 			width: 100%;

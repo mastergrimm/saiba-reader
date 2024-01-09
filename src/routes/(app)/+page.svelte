@@ -82,7 +82,7 @@
 					height: 100%;
 					object-fit: cover;
 					object-position: center;
-					transition: transform 0.4s ease;
+					transition: transform 0.2s ease;
 
 					position: relative;
 				}
